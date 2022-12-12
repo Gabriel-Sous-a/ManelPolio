@@ -1,5 +1,7 @@
 package Tiles.Buyable.tilesHouse;
 
+import Game.Player;
+
 public class House9 extends Houses{
     private String name = "Rome";
     private int price = 275000;
@@ -7,9 +9,7 @@ public class House9 extends Houses{
     private int priceHotel = 125000;
     private int numOfBuildings = 0;
     private String color = "p";
-    private int rentWNBuilding = 12000;
-    private int rentW1Building = 80000;
-    private int rentW2Building = 160000;
-    private int rentW3Building = 240000;
-    private int rentWHotel = 440000;
+    private int[] rentPrice = {12000, 80000, 160000, 240000, 440000};
+    private Player owner;
+    private boolean [] playerPosition = {false, false, false ,false};
 }

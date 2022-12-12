@@ -9,12 +9,11 @@ public class Houses {
     private int priceHotel = 0;
     private int numOfBuildings = 0;
     private String color;
-    private int rentWNBuilding = 0;
-    private int rentW1Building = 0;
-    private int rentW2Building = 0;
-    private int rentW3Building = 0;
-    private int rentWHotel = 0;
-    private int[] housesColor = {0, 0, 0, 0, 0, 0, 0, 0};  //not here
+    private int[] rentPrice = {0, 0, 0, 0, 0}; //0 -> no building 1-> 1 building 2 -> 2 building 3-> building 4 -> hotel
+    private Player owner;
+
+    private boolean[] playerPosition = {false, false, false, false};
+    private int[] housesColor = {0, 0, 0, 0, 0, 0, 0, 0};  //not here, check if player makes Monopoly
 
 
     public void buy(Player player, Houses house) {
@@ -77,24 +76,24 @@ public class Houses {
     public void rent(Player player, Player player2, Houses house) {
         switch (house.numOfBuildings) {     //player2 lands on player house
             case 0 -> {
-                player.setMoney(player.getMoney() + rentWNBuilding);
-                player2.setMoney(player2.getMoney() - rentWNBuilding);
+                player.setMoney(player.getMoney() + rentPrice[0]);
+                player2.setMoney(player2.getMoney() - rentPrice[0]);
             }
             case 1 -> {
-                player.setMoney(player.getMoney() + rentW1Building);
-                player2.setMoney(player2.getMoney() - rentW1Building);
+                player.setMoney(player.getMoney() + rentPrice[1]);
+                player2.setMoney(player2.getMoney() - rentPrice[1]);
             }
             case 2 -> {
-                player.setMoney(player.getMoney() + rentW2Building);
-                player2.setMoney(player2.getMoney() - rentW2Building);
+                player.setMoney(player.getMoney() + rentPrice[2]);
+                player2.setMoney(player2.getMoney() - rentPrice[2]);
             }
             case 3 -> {
-                player.setMoney(player.getMoney() + rentW3Building);
-                player2.setMoney(player2.getMoney() - rentW3Building);
+                player.setMoney(player.getMoney() + rentPrice[3]);
+                player2.setMoney(player2.getMoney() - rentPrice[3]);
             }
             case 4 -> {
-                player.setMoney(player.getMoney() + rentWHotel);
-                player2.setMoney(player2.getMoney() - rentWHotel);
+                player.setMoney(player.getMoney() + rentPrice[4]);
+                player2.setMoney(player2.getMoney() - rentPrice[4]);
             }
         }
     }
