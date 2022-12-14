@@ -1,7 +1,5 @@
 package Game;
-import Tiles.*;
-import Tiles.Buyable.beach.Beach;
-import Tiles.Buyable.tilesHouse.Houses;
+import Tiles.Interface.Tile;
 
 import java.util.ArrayList;
 
@@ -10,8 +8,8 @@ public class Player {
     private String piece;
     private int money = 0;
     private int numProperties = 0;
-    private ArrayList<Houses> housesList = new ArrayList();
-    private ArrayList<Beach> beachList = new ArrayList();
+    private ArrayList<Tile> housesList = new ArrayList();
+    private ArrayList<Tile> beachList = new ArrayList();
     private boolean cardHolder = false;
 
 
@@ -56,19 +54,19 @@ public class Player {
         this.numProperties = numProperties;
     }
 
-    public ArrayList<Houses> getHousesList() {
+    public ArrayList<Tile> getHousesList() {
         return housesList;
     }
 
-    public void setHousesList(ArrayList<Houses> housesList) {
+    public void setHousesList(ArrayList<Tile> housesList) {
         this.housesList = housesList;
     }
 
-    public ArrayList<Beach> getBeachList() {
+    public ArrayList<Tile> getBeachList() {
         return beachList;
     }
 
-    public void setBeachList(ArrayList<Beach> beachList) {
+    public void setBeachList(ArrayList<Tile> beachList) {
         this.beachList = beachList;
     }
 

@@ -1,27 +1,35 @@
-package Tiles.Buyable.tilesHouse;
+package Tiles.Interface;
 
 import Game.Player;
 
-public class Houses {
-    private String name;
-    private int price = 0;
-    private int buildingPrice = 0;
-    private int priceHotel = 0;
-    private int numOfBuildings = 0;
-    private String color;
-    private int[] rentPrice = {0, 0, 0, 0, 0}; //0 -> no building 1-> 1 building 2 -> 2 building 3-> building 4 -> hotel
-    private Player owner;
+public class Tile {
+    protected String name;
+    public int price = 0;
+    protected int buildingPrice = 0;
+    protected int priceHotel = 0;
+    public int numOfBuildings = 0;
+    protected String color;
+    protected int[] rentPrice = {0, 0, 0, 0, 0}; //0 -> no building 1-> 1 building 2 -> 2 building 3-> building 4 -> hotel
+    protected Player owner;
 
-    private boolean[] playerPosition = {false, false, false, false};
-    private int[] housesColor = {0, 0, 0, 0, 0, 0, 0, 0};  //not here, check if player makes Monopoly
+    protected boolean[] playerPosition = {false, false, false, false};
+    protected int[] housesColor = {0, 0, 0, 0, 0, 0, 0, 0};  //not here, check if player makes Monopoly
 
+    public Tile(String name, int price, int buildingPrice, int priceHotel, String color, int[] rentPrice) {
+        this.name = name;
+        this.price = price;
+        this.buildingPrice = buildingPrice;
+        this.priceHotel = priceHotel;
+        this.color = color;
+        this.rentPrice = rentPrice;
+    }
 
-    public void buy(Player player, Houses house) {
+    public void buy(Player player, Tile house) {
         player.setMoney(player.getMoney() - house.price);
         player.getHousesList().add(house);
     }
 
-    public void putBuilding(Player player, Houses house) {
+    public void putBuilding(Player player, Tile house) {
         if (house.numOfBuildings <= 4) {
             player.setMoney(player.getMoney() - buildingPrice);
             house.numOfBuildings++;
@@ -33,7 +41,7 @@ public class Houses {
         System.out.println("Limit if houses reached");
     }
 
-    public void sell(Player player, Houses house) {
+    public void sell(Player player,Tile house) {
         switch (house.numOfBuildings) {
             case 1 -> player.setMoney(player.getMoney() + buildingPrice);
             case 2 -> player.setMoney(player.getMoney() + (buildingPrice * 2));
@@ -43,14 +51,14 @@ public class Houses {
         player.setMoney(player.getMoney() + house.price);
     }
 
-    public boolean checkColors(Player player, Houses house) {   // not here
+    public boolean checkColors(Player player, Tile house) {   // not here
         if (house.housesColor[0] == 3 || house.housesColor[1] == 3 || house.housesColor[2] == 3 || house.housesColor[5] == 3) {
             return true;
         }
         return house.housesColor[3] == 2 || house.housesColor[4] == 2 || house.housesColor[6] == 2 || house.housesColor[7] == 2;
     }
 
-    public void checkArray(Player player, Houses house) {   //not here
+    public void checkArray(Player player, Tile house) {   //not here
         for (int i = 0; i < player.getHousesList().size(); i++) {
             switch (player.getHousesList().get(i).color) {
                 case "br":
@@ -73,7 +81,7 @@ public class Houses {
         }
     }
 
-    public void rent(Player player, Player player2, Houses house) {
+    public void rent(Player player, Player player2, Tile house) {
         switch (house.numOfBuildings) {     //player2 lands on player house
             case 0 -> {
                 player.setMoney(player.getMoney() + rentPrice[0]);
@@ -96,5 +104,17 @@ public class Houses {
                 player2.setMoney(player2.getMoney() - rentPrice[4]);
             }
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setOwner(Player owner) {
+        this.owner = owner;
+    }
+
+    public int[] getRentPrice() {
+        return rentPrice;
     }
 }

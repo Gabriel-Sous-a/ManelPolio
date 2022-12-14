@@ -1,5 +1,7 @@
+package Game;
+
 public enum Color {
-    //Color end string, color reset
+    //Game.Color end string, color reset
     RESET("\033[0m"),
 
     // Regular Colors. Normal color, no bold, background color etc.
