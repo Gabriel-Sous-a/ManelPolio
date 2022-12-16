@@ -28,7 +28,7 @@ public class LL {
         tile5.setNext(tile6);
         NodeBoard tile7 = new NodeBoard(new House5("Beinjing", 175000, 50000, 100000, "lb", new int[]{6000, 35000, 75000, 105000, 210000}));
         tile6.setNext(tile7);
-        NodeBoard tile8 = new NodeBoard(new House6("Shangai", 200000, 50000, 100000, "lb", new int[]{8000, 38000, 75000, 113000, 225000}));
+        NodeBoard tile8 = new NodeBoard(new House6("Shangai", 201000, 50000, 100000, "lb", new int[]{8000, 38000, 75000, 113000, 225000}));
         tile7.setNext(tile8);
         NodeBoard tile9 = new NodeBoard(new LostIsland("Lost Island", 0, 0, 0, " ", new int[]{}));
         tile8.setNext(tile9);

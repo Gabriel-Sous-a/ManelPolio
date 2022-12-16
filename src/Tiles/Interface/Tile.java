@@ -5,8 +5,8 @@ import Game.Player;
 public class Tile {
     protected String name;
     public int price = 0;
-    protected int buildingPrice = 0;
-    protected int priceHotel = 0;
+    protected static int buildingPrice = 0;
+    protected static int priceHotel = 0;
     public int numOfBuildings = 0;
     protected String color;
     protected int[] rentPrice = {0, 0, 0, 0, 0}; //0 -> no building 1-> 1 building 2 -> 2 building 3-> building 4 -> hotel
@@ -33,10 +33,12 @@ public class Tile {
         if (house.numOfBuildings <= 4) {
             player.setMoney(player.getMoney() - buildingPrice);
             house.numOfBuildings++;
+            return;
         }
         if (house.numOfBuildings == 5) {
             house.numOfBuildings++;
             player.setMoney(player.getMoney() - priceHotel);
+            return;
         }
         System.out.println("Limit if houses reached");
     }
@@ -116,5 +118,13 @@ public class Tile {
 
     public int[] getRentPrice() {
         return rentPrice;
+    }
+
+    public Player getOwner() {
+        return owner;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

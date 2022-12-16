@@ -77,4 +77,5 @@ public class Player {
     public void setCardHolder(boolean cardHolder) {
         this.cardHolder = cardHolder;
     }
+
 }

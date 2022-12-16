@@ -56,7 +56,7 @@ public class Board {
     public static void boardPrint () {
         String num7 = " 07 ";
         System.out.println( "------ ------ ------ ------ ------ ------ ------ ------ ------\n" +
-                            "|"+green+" 00 "+reset+"| | 17 | |"+yellow+" 18 "+reset+"| | 19 | |"+cyan+" 20 "+reset+"| | 21 | | 22 | | 23 | |"+magenta+" 00 "+reset+"|\n" +
+                            "|"+green+" 16 "+reset+"| | 17 | |"+yellow+" 18 "+reset+"| | 19 | |"+cyan+" 20 "+reset+"| | 21 | | 22 | | 23 | |"+magenta+" 24 "+reset+"|\n" +
                             "------ ------ ------ ------ ------ ------ ------ ------ ------\n" +
                             "------                                                  ------\n" +
                             "| 15 |                                                  |"+yellow+" 25 "+reset+"|\n" +
@@ -68,13 +68,13 @@ public class Board {
                             "| 13 |                                                  | 27 |\n" +
                             "------                                                  ------\n" +
                             "------                                                  ------\n" +
-                            "|"+cyan+" 12 "+reset+"|                                                  |"+cyan+" 20 "+reset+"|\n" +
+                            "|"+cyan+" 12 "+reset+"|                                                  |"+cyan+" 28 "+reset+"|\n" +
                             "------                                                  ------\n" +
                             "------                                                  ------\n" +
                             "| 11 |                                                  | 29 |\n" +
                             "------                                                  ------\n" +
                             "------                                                  ------\n" +
-                            "| 10 |                                                  | 30 |\n" +
+                            "| 10 |                                                  |" + Color.WHITE_BOLD +" 30 "+ Color.RESET +"|\n" +
                             "------                                                  ------\n" +
                             "------                                                  ------\n" +
                             "| 09 |                                                  | 31 |\n" +
