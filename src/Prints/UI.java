@@ -7,7 +7,6 @@ public class UI {
         StringBuilder stringBuilder = new StringBuilder();
 
         System.out.println(stringBuilder.append(player.getName()+ "    " + player.getPiece() + "\n" + "--------------" + "\n" + "💶 " + player.getMoney() + " 💶"));
-        player.setCardHolder(true);
         if (player.isCardHolder()) {
             System.out.println("🛶");
         }
